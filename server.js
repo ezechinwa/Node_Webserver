@@ -11,15 +11,24 @@ app.use((request,response,next)=>{
 next();
 });
 app.get('/', (request,response)=>{
-    response.send({
-        name : 'williams',
-        likes : ['biking', 'women']
-    }); 
+    response.render('projects.hbs',{
+        pageTitle : 'Projects',
+        footerTitle : '2017'
+        
+    });
 });
 
 app.get('/about', (request,response)=>{
     response.render('about.hbs',{
         pageTitle : 'About Us',
+        footerTitle : '2017'
+        
+    });
+});
+
+app.get('/projects', (request,response)=>{
+    response.render('projects.hbs',{
+        pageTitle : 'Projects',
         footerTitle : '2017'
         
     });
